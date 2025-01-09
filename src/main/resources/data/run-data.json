@@ -1,0 +1,42 @@
+[
+  {
+    "runId": 1,
+    "title": "Morning Central Park Loop",
+    "startedOn": "2025-01-09T07:30:00",
+    "finishedOn": "2025-01-09T08:15:00",
+    "miles": 4,
+    "location": "OUTDOOR"
+  },
+  {
+    "runId": 2,
+    "title": "Riverside Trail Run",
+    "startedOn": "2025-01-08T16:45:00",
+    "finishedOn": "2025-01-08T17:30:00",
+    "miles": 5,
+    "location": "INDOOR"
+  },
+  {
+    "runId": 3,
+    "title": "Evening Beach Sprint",
+    "startedOn": "2025-01-07T18:00:00",
+    "finishedOn": "2025-01-07T18:45:00",
+    "miles": 3,
+    "location": "OUTDOOR"
+  },
+  {
+    "runId": 4,
+    "title": "Weekend Long Run",
+    "startedOn": "2025-01-06T09:00:00",
+    "finishedOn": "2025-01-06T10:30:00",
+    "miles": 8,
+    "location": "OUTDOOR"
+  },
+  {
+    "runId": 5,
+    "title": "Trail Adventure",
+    "startedOn": "2025-01-05T15:00:00",
+    "finishedOn": "2025-01-05T16:15:00",
+    "miles": 6,
+    "location": "INDOOR"
+  }
+]
