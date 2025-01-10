@@ -2,6 +2,10 @@ package com.harihara.runHistory.repo;
 
 import com.harihara.runHistory.model.Run;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jdbc.repository.query.Modifying;
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
@@ -10,7 +14,20 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class RunRepository {
+public interface RunRepository extends ListCrudRepository<Run, Integer> {
+
+    @Modifying
+    @Query("INSERT INTO run(run_id, title, started_on, finished_on, miles, location) VALUES " +
+            "(:#{#run.runId}, :#{#run.title}, :#{#run.startedOn}, :#{#run.finishedOn}, :#{#run.miles}," +
+            " :#{#run.location.toString()})")
+    void insert(Run run);
+
+    Optional<Run> findByRunId(Integer runId);
+
+    List<Run> findByLocation(String location);
+}
+
+/*
     private JdbcClient jdbcClient;
 
     @Autowired
@@ -84,4 +101,4 @@ public class RunRepository {
                 .query(Run.class)
                 .list();
     }
-}
+* */
